@@ -4,8 +4,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: ['./src/index.js'],
-        react: ['react', 'react-dom']
+        app: ['./src/containers/index.js'],
+        react: ['react', 'react-dom', 'jquery']
     },
     output: {
         path: path.join(__dirname, '/assets/'),
@@ -21,10 +21,14 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.NoErrorsPlugin(),
+        // new webpack.optimize.CommonsChunkPlugin('react', 'react.js'), //这是第三方库打包生成的文件
         new ExtractTextPlugin('[name].css'),
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({
             React: 'react',
-            ReactDOM: 'react-dom'
+            ReactDOM: 'react-dom',
+            $: 'jquery'
         })
     ]
 }

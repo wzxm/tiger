@@ -4,6 +4,7 @@
   "description": "react",
   "main": "index.js",
   "scripts": {
+    "build": "webpack -p --config webpack.config.build.js",
     "watch": "webpack -w -p --config webpack.config.build.js"
   },
   "repository": {
@@ -23,16 +24,28 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.1",
     "extract-text-webpack-plugin": "^2.1.0",
+    "history": "^4.6.1",
     "immutable": "^3.8.1",
+    "isomorphic-fetch": "^2.2.1",
     "jsx-loader": "^0.13.2",
     "node-sass": "^4.5.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.17.0",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "es6-promise": "^4.1.0",
+    "file-loader": "^0.11.1",
+    "jquery": "^3.2.1",
+    "url-loader": "^0.5.8"
   }
 }
